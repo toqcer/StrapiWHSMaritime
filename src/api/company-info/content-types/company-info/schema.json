@@ -30,6 +30,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "iso_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

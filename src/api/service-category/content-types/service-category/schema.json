@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_categories",
+  "info": {
+    "singularName": "service-category",
+    "pluralName": "service-categories",
+    "displayName": "service_category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 40,
+      "required": true,
+      "unique": true
+    },
+    "services_contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::services-content.services-content",
+      "mappedBy": "service_category"
+    }
+  }
+}

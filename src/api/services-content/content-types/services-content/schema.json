@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_contents",
+  "info": {
+    "singularName": "services-content",
+    "pluralName": "services-contents",
+    "displayName": "services_content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "required": true,
+      "unique": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ]
+    },
+    "wysiwyg": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true
+    },
+    "service_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-category.service-category",
+      "inversedBy": "services_contents"
+    },
+    "show_in_homepage": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

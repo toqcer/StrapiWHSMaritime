@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts_us",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contacts-us",
+    "displayName": "contact us"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 200,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "minLength": 6,
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 15,
+      "required": true,
+      "unique": false
+    },
+    "fax": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 15,
+      "required": true
+    },
+    "iframe_address": {
+      "type": "text",
+      "minLength": 10
+    }
+  }
+}

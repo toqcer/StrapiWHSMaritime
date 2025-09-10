@@ -45,6 +45,17 @@
     "show_in_homepage": {
       "type": "boolean",
       "default": false
+    },
+    "recap": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 300,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }

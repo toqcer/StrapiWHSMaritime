@@ -504,6 +504,8 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
         maxLength: 200;
         minLength: 10;
       }>;
+    banner_contact_page: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -518,6 +520,12 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 15;
         minLength: 6;
+      }>;
+    head_quarter: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 3;
       }>;
     iframe_address: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
@@ -641,12 +649,19 @@ export interface ApiServicesContentServicesContent
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    recap: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 10;
+      }>;
     service_category: Schema.Attribute.Relation<
       'manyToOne',
       'api::service-category.service-category'
     >;
     show_in_homepage: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

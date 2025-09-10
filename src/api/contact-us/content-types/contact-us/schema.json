@@ -39,6 +39,20 @@
     "iframe_address": {
       "type": "text",
       "minLength": 10
+    },
+    "banner_contact_page": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "head_quarter": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "required": true
     }
   }
 }
